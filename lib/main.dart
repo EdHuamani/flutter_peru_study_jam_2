@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_jam_peru_2/login_with_github.dart';
+import 'package:study_jam_peru_2/routes.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,31 +11,8 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'FlutterHub'),
+      routes: getRoutes(context),
+      onGenerateRoute: (r) => getGenerateRoute(r, context),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text(widget.title),
-        ),
-        body: new Center(
-          child: LoginWithGithub(),
-        ));
   }
 }

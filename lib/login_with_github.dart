@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginWithGithub extends StatelessWidget {
+  final VoidCallback onPressedEvent;
+
+  const LoginWithGithub({Key key, 
+  
+  @required this.onPressedEvent}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return RaisedButton.icon(
@@ -12,7 +17,7 @@ class LoginWithGithub extends StatelessWidget {
         'assets/images/github_mark.svg',
         color: Colors.white,
       ),
-      onPressed: () {},
+      onPressed: onPressedEvent,
       label: RichText(
         text: TextSpan(children: [
           TextSpan(text: 'Login with '),
